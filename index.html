@@ -76,12 +76,7 @@
 		</a-sky>
 		
 		<!-- Library Bridge scene -->
-            	<a-sky
-                    id="libbridge"
-                    src="#libbridge"
-                    radius="20"
-                    side="double"
-                    position="0 50 5">
+            	<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
             	</a-sky>
 
 		<!-- Arrow to Lecture Hall -->
@@ -110,21 +105,15 @@
 		</a-entity>
 
 		<!-- Arrow from grass to bridge -->
-		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1"></a-entity>
+		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1"
+			 data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			 position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
 		
 		<!-- Arrow from Library Bridge to Grass -->
-            	<a-entity
-                        data-newX="-50" data-newY="0" data-newZ="5"
-                 	data-brackets-id="2460"
-			geometry="primitive:cone;
-			height:1.5;
-			skipCache:true" 
-			position="5 45 20" 
-			rotation="90 270 90" 
-			material="color:#AA0000;transparent:true" 
-			scale="1 1 1.03834"
-                        set-camera>
-            </a-entity>
+            	<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" 
+			 data-brackets-id="2460" position="5 45 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+            	</a-entity>
 	</a-scene>
 </body>
 
