@@ -19,7 +19,6 @@
 			<img id="lecturehall" src="img/lecturehall.jpg">
 			<img id="lobby" src="img/lobby.jpg">
 			<img id="grass" src="img/grass.jpg">
-
 			<img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
 			<img id="city-thumb" crossorigin="anonymous"
 				src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
@@ -58,9 +57,13 @@
 			rotation="-13.636395524113595 -92.81916281119338 0" look-controls=""
 			wasd-controls="adEnabled:false;enabled:false;wsEnabled:false;acceleration:0;easing:0"
 			data-aframe-inspector-original-camera="">
-			<a-entity cursor position="0 0 -1" geometry="primitive: sphere; radius: 0.005"
-				material="color: #000000; shader: flat; opacity: 0.5">
-			</a-entity>
+			 <a-cursor id="cursor"
+                animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+                animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+                event-set__1="_event: mouseenter; color: springgreen"
+                event-set__2="_event: mouseleave; color: black"
+                fuse="true"
+                raycaster="objects: .link"></a-cursor>
 		</a-camera>
 
 		<!-- Lobby scene -->
@@ -79,38 +82,34 @@
             	<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
             	</a-sky>
 
-		<!-- Arrow to Lecture Hall -->
-		<!-- data-newX/Y/Z should correspond to position of the destination -->
-		<a-entity data-newX="50" data-newY="0" data-newZ="5" data-brackets-id="2460" geometry="primitive:cone;
-								height:1.5;
-								skipCache:true" position="10.48054 2 13.70614" rotation="90 180 90" material="color:#AA0000;transparent:true"
-			scale="1 1 1.03834" set-camera>
+		<!-- Link to Lecture Hall -->
+		<!-- data-newX/Y/Z should correspond to position of the destination-->
+		<a-entity template="src: #link" data-newX="50" data-newY="0" data-newZ="5" data-brackets-id="2460" 
+            data-thumb="#lecturehall" position="10.48 2 13.7" scale="1 1 1.03834" set-camera> 
 		</a-entity>
 
-		<!-- Arrow from hall to Lobby -->
-		<a-entity data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460" geometry="primitive:cone;
-								height:1.5;
-								skipCache:true" position="55 0 5" rotation="90 180 90" material="color:#AA0000;transparent:true"
-			scale="1 1 1.03834" set-camera>
+		<!-- Link from hall to Lobby -->
+		<a-entity template="src: #link" data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460" 
+            data-thumb="#lobby" position="55 0 5" scale="1 1 1.03834" set-camera> 
 		</a-entity>
 
-		<!-- Arrow from lobby to grass -->
+		<!-- Link from lobby to grass -->
 		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
 			data-thumb="#grass" position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
 
-		<!-- Arrow from grass to lobby -->
+		<!-- Link from grass to lobby -->
 		<a-entity template="src: #link" data-thumb="#culogo" data-newX="0" data-newY="0" data-newZ="5"
 			data-brackets-id="2460" position="-50 -2 5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
 
-		<!-- Arrow from grass to bridge -->
+		<!-- Link from grass to bridge -->
 		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1"
 			 data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
 			 position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
 		
-		<!-- Arrow from Library Bridge to Grass -->
+		<!-- Link from Library Bridge to Grass -->
             	<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" 
 			 data-brackets-id="2460" position="5 45 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
             	</a-entity>
