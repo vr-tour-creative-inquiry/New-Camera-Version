@@ -57,13 +57,11 @@
 			rotation="-13.636395524113595 -92.81916281119338 0" look-controls=""
 			wasd-controls="adEnabled:false;enabled:false;wsEnabled:false;acceleration:0;easing:0"
 			data-aframe-inspector-original-camera="">
-			 <a-cursor id="cursor"
-                animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
-                animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
-                event-set__1="_event: mouseenter; color: springgreen"
-                event-set__2="_event: mouseleave; color: black"
-                fuse="true"
-                raycaster="objects: .link"></a-cursor>
+			<a-cursor id="cursor"
+				animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+				animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+				event-set__1="_event: mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black"
+				fuse="true" raycaster="objects: .link"></a-cursor>
 		</a-camera>
 
 		<!-- Lobby scene -->
@@ -77,26 +75,29 @@
 		<!-- Grass scene -->
 		<a-sky id="grass" src="#grass" radius="20" side="double" position="-50 0 5">
 		</a-sky>
-		
+
 		<!-- Library Bridge scene -->
-            	<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
-            	</a-sky>
+		<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
+		</a-sky>
 
 		<!-- Link to Lecture Hall -->
 		<!-- data-newX/Y/Z should correspond to position of the destination-->
-		<a-entity template="src: #link" data-newX="50" data-newY="0" data-newZ="5" data-brackets-id="2460" 
-            data-thumb="#lecturehall" position="10.48 2 13.7" scale="1 1 1.03834" set-camera> 
+		<a-entity template="src: #link" data-newX="50" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			data-thumb="#lecturehall" position="10.48 2 13.7" scale="1 1 1.03834" set-camera>
 		</a-entity>
+		<!-- <a-text value="Lecture Hall" position="10.48 2 12.7" color="blue"></a-text> -->
 
 		<!-- Link from hall to Lobby -->
-		<a-entity template="src: #link" data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460" 
-            data-thumb="#lobby" position="55 0 5" scale="1 1 1.03834" set-camera> 
+		<a-entity template="src: #link" data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			data-thumb="#lobby" position="55 0 5" scale="1 1 1.03834" set-camera>
 		</a-entity>
+		<a-text value="Lobby" position="55 -1 3" color="blue"></a-text>
 
 		<!-- Link from lobby to grass -->
 		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
-			data-thumb="#grass" position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			data-thumb="#grass" position=".5 1 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
+		<a-text value="Watt Center" position=".5 0 0" color="blue"></a-text>
 
 		<!-- Link from grass to lobby -->
 		<a-entity template="src: #link" data-thumb="#culogo" data-newX="0" data-newY="0" data-newZ="5"
@@ -104,15 +105,15 @@
 		</a-entity>
 
 		<!-- Link from grass to bridge -->
-		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1"
-			 data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
-			 position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1" data-newX="0" data-newY="50"
+			data-newZ="5" data-brackets-id="2460" position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
-		
+		<a-text value="LIbrary Bridge" position="-50 -0.75 -1" color="blue"></a-text>
+
 		<!-- Link from Library Bridge to Grass -->
-            	<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" 
-			 data-brackets-id="2460" position="5 45 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
-            	</a-entity>
+		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			position="5 45 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
 	</a-scene>
 </body>
 
