@@ -37,6 +37,7 @@
 			<img id="play" src="img/playbtn.png">
 			<img id="pause" src="img/pause.png">
 			<img id="adobe" src="img/adobe.jpg">
+            <img id="libInt" src="img/libraryInt.jpg">
 
 			<script id="link" type="text/html">
 				          <a-entity class="link"
@@ -78,6 +79,14 @@
 		<!-- Library Bridge scene -->
 		<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
 		</a-sky>
+        
+        <!-- Adobe scene -->
+		<a-sky id="adobe" src="#adobe" radius="20" side="double" position="0 100 5">
+		</a-sky>
+    
+        <!-- Library Bridge scene -->
+		<a-sky id="libInt" src="#libInt" radius="20" side="double" position="50 100 5">
+		</a-sky>
 
 		<!-- Link to Lecture Hall -->
 		<!-- data-newX/Y/Z should correspond to position of the destination-->
@@ -111,8 +120,28 @@
 		<a-text value="Library Bridge" position="-50 -0.75 -1" color="blue"></a-text>
 
 		<!-- Link from Library Bridge to Grass -->
-		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
+		<a-entity template="src: #link" data-thumb="#grass" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
 			position="5 45 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from Library Bridge to Adobe -->
+		<a-entity template="src: #link" data-thumb="#adobe" data-newX="0" data-newY="100" data-newZ="5" data-brackets-id="2460"
+			position="-15 52 7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from Adobe to Library Interior -->
+		<a-entity template="src: #link" data-thumb="#libInt" data-newX="50" data-newY="100" data-newZ="5" data-brackets-id="2460"
+			position="10 100 5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+         <!-- Link from Library Interior to Library Bridge -->
+		<a-entity template="src: #link" data-thumb="#libbridge" data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			position="35 100 5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+         <!-- Link from Adobe to Library Bridge -->
+		<a-entity template="src: #link" data-thumb="#libbridge" data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			position="-15 100 15" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
 	</a-scene>
 </body>
