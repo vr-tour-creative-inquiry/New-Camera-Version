@@ -17,22 +17,16 @@
 		<a-assests>
 			<img id="lecturehall" src="img/lecturehall.jpg">
 			<img id="lobby" src="img/lobby.jpg">
+			<img id="core" src="img/core.jpg">
+			<img id="room" src="img/room.JPG">
 			<img id="grass" src="img/grass.jpg">
-			<img id="city" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
-			<img id="city-thumb" crossorigin="anonymous"
-				src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
-			<img id="cubes-thumb" crossorigin="anonymous"
-				src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
-			<img id="sechelt-thumb" crossorigin="anonymous"
-				src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+			
 			<audio id="click-sound" crossorigin="anonymous"
 				src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
-			<img id="cubes" crossorigin="anonymous" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
-			<img id="sechelt" crossorigin="anonymous"
-				src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+			
 			<img id="libbridge" src="img/libraryBridge.jpg">
-			<img id="lobby" src="img/lobby.jpg">
-			<img id="grass" src="img/grass.jpg">
+		
+		
 			<img id="culogo" src="img/CUTigersLogo.png">
 			<img id="play" src="img/playbtn.png">
 			<img id="pause" src="img/pause.png">
@@ -63,6 +57,14 @@
 				event-set__1="_event: mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black"
 				fuse="true" raycaster="objects: .link"></a-cursor>
 		</a-camera>
+
+		<!-- core scene -->
+		<a-sky id="core" src="#core" radius="20" side="double" position="500 0 5">
+		</a-sky>
+
+		<!-- coreRoom scene -->
+		<a-sky id="room" src="#room" radius="20" side="double" position="600 0 5">
+		</a-sky>
 
 		<!-- Lobby scene -->
 		<a-sky id="lobby" src="#lobby" radius="20" side="double" position="0 0 5">
@@ -124,7 +126,17 @@
 			position="9 50 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
         
-        <!-- Link from Library Bridge to Adobe -->
+        <!-- Link from Library Bridge to core -->
+		<a-entity template="src: #link" data-thumb="#core" data-newX="500" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			position="-8 53 -10" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+
+		<!-- Link from core to room -->
+		<a-entity template="src: #link" data-thumb="#room" data-newX="600" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			position="492 3 -5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+
+		<!-- Link from Library Bridge to Adobe -->
 		<a-entity template="src: #link" data-thumb="#adobe" data-newX="0" data-newY="100" data-newZ="5" data-brackets-id="2460"
 			position="-15 52 7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
 		</a-entity>
