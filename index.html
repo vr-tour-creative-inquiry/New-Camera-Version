@@ -38,10 +38,14 @@
 			<img id="pause" src="img/pause.png">
 			<img id="adobe" src="img/adobe.jpg">
             <img id="libInt" src="img/libraryInt.jpg">
+            <img id="wattLobby" src="img/wattlobby.JPG">
+            <img id="wattClass" src="img/wattclass.JPG">
+            <img id="vrLab" src="img/vrlab.JPG">
 
 			<script id="link" type="text/html">
 				          <a-entity class="link"
-				            geometry="primitive: sphere; height: 1; width: 1"
+				            geometry="primitive: circle; height: 1; width: 1"
+                            rotation="0 0 0"
 				            material="shader: flat; src: ${thumb}"
 				            event-set__1="_event: mousedown; scale: 1 1 1"
             event-set__2="_event: mouseup; scale: 1.2 1.2 1"
@@ -54,7 +58,7 @@
 
 		<!-- Camera -->
 		<a-camera id="Camera" data-brackets-id="2447" user-height="1.6" active="true" position="0 0 5"
-			rotation="-13.636395524113595 -92.81916281119338 0" look-controls=""
+			rotation="0 0 0" look-controls=""
 			wasd-controls="adEnabled:false;enabled:false;wsEnabled:false;acceleration:0;easing:0"
 			data-aframe-inspector-original-camera="">
             <a-cursor id="cursor"
@@ -87,61 +91,98 @@
         <!-- Library Bridge scene -->
 		<a-sky id="libInt" src="#libInt" radius="20" side="double" position="50 100 5">
 		</a-sky>
+        
+        <!-- Watt Lobby scene -->
+        <a-sky id="wattLobby" src="#wattLobby" radius="20" side="double" position="-50 50 5">
+        </a-sky>
+        
+        <!-- Watt Classroom scene -->
+        <a-sky id="wattClass" src="#wattClass" radius="20" side="double" position="-100 50 5">
+        </a-sky>
+        
+        <!-- Watt VR Lab -->
+        <a-sky id="vrLab" src="#vrLab" radius="20" side="double" position="-100 0 5">
+        </a-sky>
 
 		<!-- Link to Lecture Hall -->
 		<!-- data-newX/Y/Z should correspond to position of the destination-->
 		<a-entity template="src: #link" data-newX="50" data-newY="0" data-newZ="5" data-brackets-id="2460"
-			data-thumb="#lecturehall" position="10.48 2 13.7" scale="1 1 1.03834" set-camera>
+			data-thumb="#lecturehall" rotation="0 -120 0" position="10 2 13.7" scale="1 1 1.03834" set-camera>
 		</a-entity>
 		<a-text value="Lecture Hall" position="9.48 1 13.7" scale="2 2 2" color="blue" look-at="#Camera"></a-text>
 		<!-- <a-text value="Lecture Hall" position="10.48 2 12.7" color="blue"></a-text> -->
 
 		<!-- Link from hall to Lobby -->
 		<a-entity template="src: #link" data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460"
-			data-thumb="#lobby" position="55 0 5" scale="1 1 1.03834" set-camera>
+			data-thumb="#lobby" rotation="0 -90 0" position="55 0 5" scale="1 1 1.03834" set-camera>
 		</a-entity>
 		<a-text value="Lobby" position="55 0 3" look-at="#Camera" color="blue"></a-text>
 
 		<!-- Link from lobby to grass -->
 		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
-			data-thumb="#grass" position=".5 1 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			data-thumb="#grass" position=".5 1 -7" scale="1 1 1.03834" set-camera>
 		</a-entity>
 		<a-text value="Watt Center" position=".5 0 0" color="blue"></a-text>
-
-		<!-- Link to Lobby (CU Logo) -->
-		<a-entity id="paw" template="src: #link" geometry="primitive: circle" data-thumb="#culogo" data-newX="0" data-newY="0" data-newZ="5"
-			data-brackets-id="2460" position="-50 -3 5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
-		</a-entity>
+        
+        <!-- Link to Lobby (CU Logo) -->
+        <a-entity id="paw" template="src: #link" data-thumb="#culogo" data-newX="0" data-newY="0" data-newZ="5" data-brackets-id="2460"
+            rotation="-90 0 60" position="-50 -3.4 5" scale="1 1 1.03834" set-camera>
+        </a-entity>
 
 		<!-- Link from grass to bridge -->
-		<a-entity template="src: #link" data-thumb="#libbridge" position="-50 1 -1" data-newX="0" data-newY="50"
-			data-newZ="5" data-brackets-id="2460" position=".5 0 -7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		<a-entity template="src: #link" data-thumb="#libbridge" data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460" 
+            position="-50 1 -1" scale="1 1 1.03834" set-camera>
 		</a-entity>
 		<a-text value="Library Bridge" position="-50 -0.75 -1" color="blue"></a-text>
 
 		<!-- Link from Library Bridge to Grass -->
 		<a-entity template="src: #link" data-thumb="#grass" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
-			position="9 50 20" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			position="9 50 20" scale="1 1 1.03834" set-camera>
 		</a-entity>
         
         <!-- Link from Library Bridge to Adobe -->
 		<a-entity template="src: #link" data-thumb="#adobe" data-newX="0" data-newY="100" data-newZ="5" data-brackets-id="2460"
-			position="-15 52 7" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			rotation="0 90 0" position="-15 52 7" scale="1 1 1.03834" set-camera>
 		</a-entity>
         
         <!-- Link from Adobe to Library Interior -->
 		<a-entity template="src: #link" data-thumb="#libInt" data-newX="50" data-newY="100" data-newZ="5" data-brackets-id="2460"
-			position="-10 100 15" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			rotation="0 160 0" position="-10 100 15" scale="1 1 1.03834" set-camera>
 		</a-entity>
         
          <!-- Link from Library Interior to Library Bridge -->
 		<a-entity template="src: #link" data-thumb="#libbridge" data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
-			position="35 100 5" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+			rotation="0 90 0" position="35 100 5" scale="1 1 1.03834" set-camera>
 		</a-entity>
         
          <!-- Link from Adobe to Library Bridge -->
 		<a-entity template="src: #link" data-thumb="#libbridge" data-newX="0" data-newY="50" data-newZ="5" data-brackets-id="2460"
 			position="-10 100 8" rotation="90 270 90" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from Grass to Watt Lobby -->
+		<a-entity template="src: #link" data-thumb="#wattLobby" data-newX="-50" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			rotation="0 45 0" position="-65 1 -5" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+         <!-- Link from Watt Lobby to Classroom -->
+		<a-entity template="src: #link" data-thumb="#wattClass" data-newX="-100" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			rotation="0 90 0" position="-60 50 10" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from Watt Classroom to VR Lab -->
+		<a-entity template="src: #link" data-thumb="#wattClass" data-newX="-100" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			rotation="0 240 0" position="-90 50 14" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from VR Lab to Watt Lobby -->
+		<a-entity template="src: #link" data-thumb="#wattClass" data-newX="-50" data-newY="50" data-newZ="5" data-brackets-id="2460"
+			rotation="0 90 0" position="-117 0 5" scale="1 1 1.03834" set-camera>
+		</a-entity>
+        
+        <!-- Link from Watt Lobby to grass-->
+		<a-entity template="src: #link" data-thumb="#grass" data-newX="-50" data-newY="0" data-newZ="5" data-brackets-id="2460"
+			rotation="0 -20 0" position="-45 50 0" scale="1 1 1.03834" set-camera>
 		</a-entity>
 	</a-scene>
 </body>
