@@ -1,112 +1,123 @@
 {
-   "core": {
-        "id":"core", "src":"#core","radius":"20", "side":"double", 
-        "position,":{
-            "x":500, 
-            "y":0, 
-            "z":5
-        }
-	
-   },
-	
-    "room":{
-        "id":"room", "src":"#room", "radius":"20", "side":"double",
-        "position":{
-            "x":600, 
-            "y":0, 
-            "z":5
+    "core": {
+        "id": "coreT",
+        "src": "#core",
+        "radius": "20",
+        "side": "double",
+        "position,": {
+            "x": 500,
+            "y": 0,
+            "z": 5
         }
     },
-     "lobby":{
-
-       " id":"lobby" ,"src":"#lobby", "radius":"20", "side":"double",
-        "position":{
-            "x":0, 
-            "y":0, 
-            "z":5
-        }
-	
-    },
-       "lecture":{
-
-        "id":"lecture", "src":"#lecturehall", "radius":"20", "side":"double", 
-        "position":{
-            "x":50 ,
-            "y":0, 
-            "z":5
+    "room": {
+        "id": "roomT",
+        "src": "#room",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 600,
+            "y": 0,
+            "z": 5
         }
     },
-    "grass":{
-
-    
-        "id":"grass" ,"src":"#grass", "radius":"20", "side":"double",
-        "position":{
-            "x":-50, 
-            "y":0, 
-            "z":5
+    "lobby": {
+        " id": "lobby",
+        "src": "#lobby",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 0,
+            "y": 0,
+            "z": 5
         }
     },
-	
-
-     "libBridge":{
-
-        "id":"libbridge", "src":"#libbridge", "radius":"20", "side":"double", 
-        "position":{
-            "x":0, 
-            "y":0, 
-            "z":5
+    "lecture": {
+        "id": "lectTure",
+        "src": "#lecturehall",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 50,
+            "y": 0,
+            "z": 5
         }
     },
-	
-       "adoble":{
-
-        "id":"adobe" ,"src":"#adobe", "radius":"20", "side":"double", 
-        "position":{
-            "x":0, 
-            "y":0, 
-            "z":5
+    "grass": {
+        "id": "grasTs",
+        "src": "#grass",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": -50,
+            "y": 0,
+            "z": 5
         }
     },
-
-    
-      "libInterior":{
-
-        "id":"libInt", ",src":"#libInt", "radius":"20", "side":"double",
-        "position":{
-            "x":50 ,
-            "y":0, 
-            "z":5
+    "libBridge": {
+        "id": "libbTridge",
+        "src": "#libbridge",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 0,
+            "y": 0,
+            "z": 5
         }
     },
-	
-        
-    
-     "wattLobby":{
-
-       "id":"wattLobby", "src,":"#wattLobby", "radius":"20", "side":"double", 
-        "position":{
-            "x":-50,
-            "y":0, 
-            "z":5
+    "adoble": {
+        "id": "adobTe",
+        "src": "#adobe",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 0,
+            "y": 0,
+            "z": 5
         }
     },
-        
-        
-    "wattClass:":{
-                 "id":"wattClass", "src,":"#wattClass", "radius":"20", "side":"double", 
-             "      position":{
-                 "x":-10,
-                 "y":0, 
-                 "z":5
-             }
-            },
-    "vrLab":{ 
-        "id:":"vrLab" ,"src":"#vrLab", "radius":"20", "side":"double",
-        "position":{
-            "x":-10,
-            "y":0, 
-            "z":5
+    "libInterior": {
+        "id": "libITnt",
+        ",src": "#libInt",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": 50,
+            "y": 0,
+            "z": 5
+        }
+    },
+    "wattLobby": {
+        "id": "wattTLobby",
+        "src,": "#wattLobby",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": -50,
+            "y": 0,
+            "z": 5
+        }
+    },
+    "wattClass:": {
+        "id": "wattTClass",
+        "src,": "#wattClass",
+        "radius": "20",
+        "side": "double",
+        "      position": {
+            "x": -10,
+            "y": 0,
+            "z": 5
+        }
+    },
+    "vrLab": {
+        "id:": "vrLab",
+        "src": "#vrLab",
+        "radius": "20",
+        "side": "double",
+        "position": {
+            "x": -10,
+            "y": 0,
+            "z": 5
         }
     }
-    
 }

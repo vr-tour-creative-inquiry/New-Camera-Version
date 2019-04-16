@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+
+<head>
+	<title>test tour</title>
+
+	<script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+	<script src="https://unpkg.com/aframe-event-set-component@^4.0.0/dist/aframe-event-set-component.min.js"></script>
+	<script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
+	<script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
+	<script src="components/set-camera.js"></script>
+	<script src="components/jsonReader.js"></script>
+	<script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
+</head>
+
+<body>
+	<a-scene>
+		<!-- Asset Management System-->
+		<a-assests>
+			<img id="lecturehall" src="img/lecturehall.jpg">
+			<img id="lobby" src="img/lobby.jpg">
+			<img id="core" src="img/core.jpg">
+			<img id="room" src="img/room.JPG">
+			<img id="grass" src="img/grass.jpg">
+			<audio id="click-sound" crossorigin="anonymous"
+				src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+			<img id="libbridge" src="img/libraryBridge.jpg">
+			<img id="culogo" src="img/CUTigersLogo.png">
+			<img id="play" src="img/playbtn.png">
+			<img id="pause" src="img/pause.png">
+			<img id="adobe" src="img/adobe.jpg">
+			<img id="libInt" src="img/libraryInt.jpg">
+			<img id="wattLobby" src="img/wattlobby.JPG">
+			<img id="wattClass" src="img/wattclass.JPG">
+			<img id="vrLab" src="img/vrlab.JPG">
+
+			<script id="link" type="text/html">
+				          <a-entity class="link"
+				            geometry="primitive: circle; height: 1; width: 1"
+                            rotation="0 0 0"
+				            material="shader: flat; src: ${thumb}"
+				            event-set__1="_event: mousedown; scale: 1 1 1"
+            event-set__2="_event: mouseup; scale: 1.2 1.2 1"
+            event-set__3="_event: mouseenter; scale: 1.2 1.2 1"
+            event-set__4="_event: mouseleave; scale: 1 1 1"
+				            sound="on: click; src: #click-sound"
+				            look-at="#camera"></a-entity>
+				        </script>
+		</a-assests>
+
+		<!-- Camera -->
+		<a-camera id="Camera" data-brackets-id="2447" user-height="1.6" active="true" position="0 0 5" rotation="0 0 0"
+			look-controls="" wasd-controls="adEnabled:false;enabled:false;wsEnabled:false;acceleration:0;easing:0"
+			data-aframe-inspector-original-camera="">
+			<a-cursor id="cursor"
+				animation__click="property: scale; startEvents: click; from: 0.1 0.1 0.1; to: 1 1 1; dur: 150"
+				animation__fusing="property: fusing; startEvents: fusing; from: 1 1 1; to: 0.1 0.1 0.1; dur: 1500"
+				event-set__1="_event: mouseenter; color: springgreen" event-set__2="_event: mouseleave; color: black"
+				fuse="true" raycaster="objects: .link"></a-cursor>
+		</a-camera>
+
+		<!-- core scene -->
+
+		<!-- Lobby scene -->
+		<a-sky jsonReader>
+		</a-sky>
+
+
+	</a-scene>
+</body>
+
+</html>
