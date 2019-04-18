@@ -8,6 +8,7 @@
 	<script src="https://npmcdn.com/aframe-layout-component@3.0.1"></script>
 	<script src="https://npmcdn.com/aframe-template-component@3.1.1"></script>
 	<script src="components/set-camera.js"></script>
+    <script src="components/play-pause.js"></script>
 	<script src="https://unpkg.com/aframe-look-at-component@0.8.x/dist/aframe-look-at-component.min.js"></script>
 </head>
 
@@ -31,6 +32,8 @@
             <img id="wattLobby" src="img/wattlobby.JPG">
             <img id="wattClass" src="img/wattclass.JPG">
             <img id="vrLab" src="img/vrlab.JPG">
+            <video id="admissionsVid" src="video/AdmissionsVideo.mp4"></video>
+
 
 			<script id="link" type="text/html">
 				          <a-entity class="link"
@@ -73,11 +76,17 @@
 		<!-- Lecture hall scene -->
 		<a-sky id="lecture" src="#lecturehall" radius="20" side="double" position="50 0 5">
 		</a-sky>
+        
+        <!-- Admissions Video -->
+        <a-video class="link" src="#admissionsVid" width="8" height="4.5" 
+            position="33 2 3.5" rotation="0 90 0">
+            <a-image id="videoControls" src="#play" position="0 0 0.1" material="alphaTest:0.75" play-pause></a-image>
+        </a-video>
 
 		<!-- Grass scene -->
 		<a-sky id="grass" src="#grass" radius="20" side="double" position="-50 0 5">
 		</a-sky>
-
+        
 		<!-- Library Bridge scene -->
 		<a-sky id="libbridge" src="#libbridge" radius="20" side="double" position="0 50 5">
 		</a-sky>

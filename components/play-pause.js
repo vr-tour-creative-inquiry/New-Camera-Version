@@ -2,9 +2,9 @@
 
 AFRAME.registerComponent('play-pause', {
     init: function () {
-        var myVideo = document.querySelector('#introvideo');
+        var myVideo = document.querySelector('#admissionsVid');
         var videoControls = document.querySelector('#videoControls');
-        this.el.addEventListener('click', function () {
+        this.el.addEventListener('mouseenter', function () {
             if (myVideo.paused) {
                 myVideo.play();
                 videoControls.setAttribute('visible', 'false');
