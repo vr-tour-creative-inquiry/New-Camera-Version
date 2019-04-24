@@ -126,7 +126,7 @@
 
 		<!-- Link from lobby to grass -->
 		<a-entity id="loblink" template="src: #link" data-newX="-50" data-newY="0" data-newZ="5"
-			data-thumb="#grass" position=".5 1 -7" look-at="#Camera" set-camera>
+			data-thumb="#grass" position="3.75 0 -14" look-at="#Camera" set-camera>
             <a-entity text="value: Watt Center; color: blue; width: 1.5" position=".5 2 0"></a-entity>
 		</a-entity>
         
@@ -137,9 +137,9 @@
 
 		<!-- Link from grass to bridge -->
 		<a-entity template="src: #link" data-newX="0" data-newY="50" data-newZ="5"
-                  data-thumb="#libbridge" position="-50 1 -1" look-at="#Camera" set-camera>
+                  data-thumb="#libbridge" position="-35 1 -3" look-at="#Camera" set-camera>
 		</a-entity>
-		<a-text value="Library Bridge" position="-50 -0.75 -1" color="blue"></a-text>
+		<a-text value="Library Bridge" position="-45 1 0" color="blue"></a-text>
 
 		<!-- Link from Library Bridge to Grass -->
 		<a-entity template="src: #link" data-newX="-50" data-newY="0" data-newZ="5"
@@ -153,7 +153,12 @@
 
 		<!-- Link from core to room -->
 		<a-entity template="src: #link" data-newX="600" data-newY="0" data-newZ="5"
-                  data-thumb="#room" position="492 3 -5"  look-at="#Camera" set-camera>
+                  data-thumb="#room" position="495 0 -10"  look-at="#Camera" set-camera>
+		</a-entity>
+        
+        <!-- Link from room to Core -->
+		<a-entity template="src: #link" data-newX="500" data-newY="0" data-newZ="5"
+                  data-thumb="#core" look-at="#Camera" position="601.5 0 -3.5" set-camera>
 		</a-entity>
 
 		<!-- Link from Library Bridge to Adobe -->
